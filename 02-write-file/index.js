@@ -18,6 +18,7 @@ myEmmiter.emit('greetingEvent');
 process.stdout.write('Hello reviewer, input text....!' + '\n');
 stdin.on('data', (data) => {
   if (data.toString().trim() === 'exit') {
+    console.log('Bye reviewer...))!');
     process.exit();
   } else {
     writeStream.write(data);
