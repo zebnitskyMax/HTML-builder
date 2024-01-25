@@ -26,3 +26,7 @@ stdin.on('data', (data) => {
   // data = data.toString();
   // process.stdout.write(data + '\n');
 });
+process.on('SIGINT', () => {
+  console.log('Bye reviewer...))!');
+  process.exit();
+});

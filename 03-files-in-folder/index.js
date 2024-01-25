@@ -18,8 +18,15 @@ fs.readdir(path.join(__dirname, 'secret-folder'), (err, data) => {
         // console.log(el);
         // console.log(stats.size);
         if (stats.size) {
+          let dotFindIndex = path.basename(el).split('').indexOf('.');
           console.log(
-            `${path.basename(el)} - ${path.extname(el)} - ${stats.size}b`,
+            `${path
+              .basename(el)
+              .split('')
+              .slice(0, dotFindIndex)
+              .join('')} - ${path.extname(el).slice(1, el.length)} - ${
+              stats.size
+            }b`,
           );
         }
       }
